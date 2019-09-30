@@ -16,3 +16,17 @@ class ProductPageLocators():
     BASKET_SUMM_PRICE = (By.CSS_SELECTOR, ".alert-info.fade.in > div > p:nth-child(1) > strong")
     GO_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".alert-info.fade.in > div > p:nth-child(2) > a:nth-child(1)")
     GO_TO_CHECKOUT = (By.CSS_SELECTOR, ".alert-noicon.alert-info.fade.in > div > p:nth-child(2) > a:nth-child(2)")
+
+class LoginPageLocators():
+#login_form
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    LOGIN_USERNAME = (By.CSS_SELECTOR, "#id_login-username")
+    LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
+    PASSWORD_RESET = (By.CSS_SELECTOR, "#login_form > p > a")
+    LOGIN_SUBMIT = (By.CSS_SELECTOR, "#login_form > button")
+#register_form
+    REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    REGISTRATION_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD1 = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_SUBMIT = (By.CSS_SELECTOR, "#register_form > button")
