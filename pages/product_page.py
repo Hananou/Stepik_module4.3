@@ -16,7 +16,7 @@ class ProductPage(BasePage):
    
     def message_after_adding_check(self):
         ProductName=self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        ProductAddedMessage=self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_TO_BASKET).text
+        ProductAddedMessage = self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_TO_BASKET).text
         assert ProductName == ProductAddedMessage, "Message about adding to basket ("+ProductAddedMessage+") is not equal product name ("+ProductName+")"
         ProductPrice=self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         BasketSum=self.browser.find_element(*ProductPageLocators.BASKET_SUMM_PRICE).text

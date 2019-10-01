@@ -3,6 +3,7 @@ from pages.base_page import BasePage
 from pages.product_page import ProductPage
 from pages.login_page import LoginPage
 from selenium.common.exceptions import NoAlertPresentException
+from pages.basket_page import BasketPage
 import time
 
 link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/"
@@ -60,3 +61,11 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()          
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = ProductPage(browser,link) #Гость открывает главную страницу 
+    page.open()
+    page.go_to_basket_page() #Переходит в корзину по кнопке в шапке сайта
+    basket_page = BasketPage(browser, browser.current_url)
+    basket_page.basket_should_be_empty() #Ожидаем, что в корзине нет товаров
+    basket_page.basket_is_empty_message_presented() #Ожидаем, что есть текст о том что корзина пуста 
