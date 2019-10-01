@@ -5,7 +5,7 @@ from pages.login_page import LoginPage
 from selenium.common.exceptions import NoAlertPresentException
 import time
 
-#link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/"
+link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/"
 
 
 @pytest.mark.skip
