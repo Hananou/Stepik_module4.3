@@ -1,4 +1,5 @@
 import pytest
+import time
 from pages.base_page import BasePage
 from pages.product_page import ProductPage
 from pages.login_page import LoginPage
@@ -75,7 +76,9 @@ class TestUserAddToBasketFromProductPage():
     def setup(self, browser):
         page = LoginPage(browser, "http://selenium1py.pythonanywhere.com/accounts/login/")
         page.open()
-        page.register_new_user()
+        email = str(time.time()) + "@fakemail2.org"
+        password = "pasKJHhhg465458sdf"
+        page.register_new_user(email, password)
         page.should_be_authorized_user()
         yield
 
